@@ -5,14 +5,36 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:7.0.3")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21")
+        classpath(libs.android.build.gradle)
+        classpath(libs.kotlin.gradle)
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
-tasks.register("clean", Delete::class) {
-    delete(rootProject.buildDir)
+// ref: https://youtrack.jetbrains.com/issue/KTIJ-19369#focus=Comments-27-5181027.0-0
+@Suppress("DSL_SCOPE_VIOLATION")
+plugins {
+    alias(libs.plugins.spotless)
+    alias(libs.plugins.gradle.versions.management)
+}
+
+subprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven(url = "https://kotlin.bintray.com/kotlinx")
+    }
+
+    apply(plugin = rootProject.libs.plugins.spotless.get().pluginId)
+
+    spotless {
+        kotlin {
+            target ("**/*.kt")
+            targetExclude("bin/**/*.kt")
+            ktlint("0.42.1")
+            licenseHeaderFile(rootProject.file("spotless/copyright.kt"))
+        }
+    }
 }
