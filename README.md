@@ -1,6 +1,10 @@
 # android-jetpack-compose-template
 
 ## Dev Info
+### Dependencies
+This project using [Version Catalog](https://docs.gradle.org/7.2/userguide/platforms.html#sub:central-declaration-of-dependencies).
+For more information, check original document.
+
 ### Package version update
 To check versions of libraries, run following command.
 (This command does NOT update any gradle files. Only print info)
