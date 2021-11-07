@@ -58,3 +58,4 @@ androidx-lifecycle = [
 ]
 [plugins]
 spotless = { id = "com.diffplug.spotless", version = "5.14.3" }
+gradle-versions-management = { id = "com.github.ben-manes.versions", version = "0.39.0" }
