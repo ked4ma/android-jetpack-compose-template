@@ -1,3 +1,6 @@
+/*
+ * Copyright 2021 ked4ma
+ */
 package com.github.ked4ma.android_jetpack_compose_template.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
