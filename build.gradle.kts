@@ -13,6 +13,26 @@ buildscript {
     }
 }
 
-tasks.register("clean", Delete::class) {
-    delete(rootProject.buildDir)
+@Suppress("DSL_SCOPE_VIOLATION")
+plugins {
+    alias(libs.plugins.spotless)
+}
+
+subprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven(url = "https://kotlin.bintray.com/kotlinx")
+    }
+
+    apply(plugin = rootProject.libs.plugins.spotless.get().pluginId)
+
+    spotless {
+        kotlin {
+            target ("**/*.kt")
+            targetExclude("bin/**/*.kt")
+            ktlint("0.42.1")
+            licenseHeaderFile(rootProject.file("spotless/copyright.kt"))
+        }
+    }
 }

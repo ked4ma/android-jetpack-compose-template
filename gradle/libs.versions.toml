@@ -56,5 +56,5 @@ androidx-lifecycle = [
     "androidx-lifecycle-runtime-ktx",
     "androidx-lifecycle-livedata-ktx"
 ]
-
 [plugins]
+spotless = { id = "com.diffplug.spotless", version = "5.14.3" }

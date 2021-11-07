@@ -1,8 +1,7 @@
 package com.github.ked4ma.android_jetpack_compose_template
 
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).
