@@ -63,7 +63,9 @@ dependencies {
     implementation(libs.bundles.androidx.lifecycle)
 
     testImplementation(libs.test.junit)
+    testImplementation(libs.test.truth)
     androidTestImplementation(libs.test.androidx.ext.junit)
     androidTestImplementation(libs.test.androidx.espresso)
     androidTestImplementation(libs.test.androidx.compose.ui)
+    androidTestImplementation(libs.test.truth)
 }
