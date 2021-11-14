@@ -23,8 +23,19 @@ android {
         debug {
             isMinifyEnabled = false
         }
+        create("rc") {
+            initWith(getByName("debug"))
+            isMinifyEnabled = true
+            isShrinkResources = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules-rc.pro",
+                "proguard-rules.pro"
+            )
+        }
         release {
             isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
