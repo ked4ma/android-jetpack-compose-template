@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    id("com.google.android.gms.oss-licenses-plugin")
 }
 
 android {
@@ -61,6 +62,7 @@ dependencies {
     implementation(libs.bundles.androidx.compose)
     debugImplementation(libs.androidx.compose.ui.tooling)
     implementation(libs.bundles.androidx.lifecycle)
+    implementation(libs.oss.license.lib)
 
     testImplementation(libs.test.junit)
     testImplementation(libs.test.truth)
