@@ -13,14 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.ked4ma.android_jetpack_compose_template.ui.theme
+package com.github.ked4ma.android_jetpack_compose_template.ui.screen
 
-// import androidx.compose.foundation.shape.RoundedCornerShape
-// import androidx.compose.material.Shapes
-// import androidx.compose.ui.unit.dp
-//
-// val Shapes = Shapes(
-//    small = RoundedCornerShape(4.dp),
-//    medium = RoundedCornerShape(4.dp),
-//    large = RoundedCornerShape(0.dp)
-// )
+import androidx.compose.runtime.Composable
+import com.github.ked4ma.android_jetpack_compose_template.ui.theme.AndroidjetpackcomposetemplateTheme
+import com.google.accompanist.insets.ProvideWindowInsets
+
+@Composable
+fun JetpackComposeTemplateApp(content: @Composable () -> Unit) {
+    AndroidjetpackcomposetemplateTheme {
+        ProvideWindowInsets {
+            content()
+        }
+    }
+}
