@@ -60,6 +60,7 @@ dependencies {
 
     implementation(libs.bundles.android.base)
     implementation(libs.bundles.androidx.compose)
+    implementation(libs.bundles.compose.accompanist)
     debugImplementation(libs.androidx.compose.ui.tooling)
     implementation(libs.bundles.androidx.lifecycle)
     implementation(libs.oss.license.lib)
