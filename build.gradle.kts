@@ -34,7 +34,7 @@ subprojects {
         kotlin {
             target ("**/*.kt")
             targetExclude("bin/**/*.kt")
-            ktlint("0.42.1")
+            ktlint(libs.versions.ktlint.get())
             licenseHeaderFile(rootProject.file("spotless/copyright.kt"))
         }
     }
